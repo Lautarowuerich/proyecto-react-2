@@ -2,6 +2,7 @@ import React from 'react';
 import "./navbar.css";
 import PersonIcon from '@mui/icons-material/Person';
 import CartWidget from "../CartWidget/CartWidget"
+import { Link } from 'react-router-dom'
 
 function navbar(){
     return(
@@ -10,19 +11,29 @@ function navbar(){
             <nav className='navbar'>
                 <ul className='menu'>
                     <li>
-                        <a href=''>New In</a>
+                        <Link to={'/category/NewIn'}>
+                            New In
+                        </Link>
                     </li>
                     <li>
-                        <a href=''>Hombre</a>
+                        <Link to={'/category/Hombre'}>
+                            Hombre
+                        </Link>
                     </li>
                     <li>
-                        <a href=''>Mujer</a>
+                        <Link to={'/category/Mujer'}>
+                            Mujer
+                        </Link>
                     </li>
                     <li>
-                        <a href=''>Zapatillas</a>
+                    <Link to={'/category/Zapatillas'}>
+                            Zapatillas
+                        </Link>
                     </li>
                     <li>
-                        <a href=''>Marcas</a>
+                        <Link to={'/category/Marcas'}>
+                            Marcas
+                        </Link>
                     </li>
                 </ul>
             </nav>
