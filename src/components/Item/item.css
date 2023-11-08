@@ -27,4 +27,6 @@
     overflow: hidden;
     word-wrap: break-word;
     text-overflow: ellipsis;
+    text-decoration: none;
+    
 }

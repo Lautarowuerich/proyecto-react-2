@@ -9,7 +9,7 @@ const ItemDetailConteiner = () => {
 
   const fetchProductId = () => {
     fetch(`https://fakestoreapi.com/products/${id}`)
-        .then((response) => response.json)
+        .then((response) => response.json())
         .then((data) => setProductSelected(data))
         .catch((error) => console.log(error))
     };
