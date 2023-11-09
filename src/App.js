@@ -16,7 +16,6 @@ function App() {
           <Route path="/item/:id" element={<ItemDetailContent/>}/>
         </Routes>
       </BrowserRouter>
-      <ItemDetailContent/>
     </>
   );
 };
