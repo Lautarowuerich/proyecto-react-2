@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 function navbar(){
     return(
         <header>
-            <h1>ShopTime</h1>
+            <Link className='titulo' to={'/'}><h1>freeShop</h1></Link>
             <nav className='navbar'>
                 <ul className='menu'>
                     <li>
