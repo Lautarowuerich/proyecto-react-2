@@ -2,8 +2,3 @@
     align-items: center;
     justify-content: center;
 }
-
-.item-list-container{
-    display: grid;
-    grid-template-columns: 3;
-}

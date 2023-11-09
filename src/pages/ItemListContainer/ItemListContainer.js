@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import './itemListContainer.css'
+import '../ItemListContainer/itemListContainer.css'
 import ItemCount from "../../components/ItemCount/ItemCount";
 import ItemList from "../../components/ItemList/ItemList";
 import CircularProgress from '@mui/material/CircularProgress';
