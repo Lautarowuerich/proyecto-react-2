@@ -1,10 +1,4 @@
-import { useState } from "react"
-
-const ItemCount = () => {
-
-  const [ count, setCount] = useState(0);
-
-  const stock = 15;
+const ItemCount = ({stock, setCount, count}) => {
 
   const addProduct = () => {
     setCount (count + 1);

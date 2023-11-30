@@ -1,10 +1,13 @@
-import React from 'react'
+import { useContext } from 'react'
+import '../CartWidget/CartWidget.css'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
+import { CartContext } from '../../context/CartContext';
 
 function CartWidget(){
+    const { productQuantity} = useContext(CartContext)
     return (
-        <div>
-            <ShoppingCartIcon fontSize="large"/>0
+        <div className='cart'>
+            <ShoppingCartIcon fontSize="large"/>{productQuantity}
         </div>
     );
 }

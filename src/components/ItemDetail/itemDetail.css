@@ -20,4 +20,13 @@
 .precio_detalle{
     width: 200px;
     height: 5px;
+    margin-top: 20px;
+}
+
+.button{
+    margin-top: 30px;
+}
+
+.stock{
+    margin-top: 40px;
 }

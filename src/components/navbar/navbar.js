@@ -2,44 +2,46 @@ import React from 'react';
 import "./navbar.css";
 import PersonIcon from '@mui/icons-material/Person';
 import CartWidget from "../CartWidget/CartWidget"
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 function navbar(){
     return(
         <header>
-            <Link className='titulo' to={'/'}><h1>freeShop</h1></Link>
+            <NavLink className='titulo' to={'/'}><h1>freeShop</h1></NavLink>
             <nav className='navbar'>
                 <ul className='menu'>
                     <li>
-                        <Link to={'/category/NewIn'}>
+                        <NavLink activeclassname="active" to={'/category/NewIn'}>
                             New In
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to={'/category/Hombre'}>
+                        <NavLink activeclassname="active" to={'/category/Hombre'}>
                             Hombre
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to={'/category/Mujer'}>
+                        <NavLink activeclassname="active" to={'/category/Mujer'}>
                             Mujer
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                    <Link to={'/category/Zapatillas'}>
+                    <NavLink activeclassname="active" to={'/category/Zapatillas'}>
                             Zapatillas
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to={'/category/Marcas'}>
+                        <NavLink activeclassname="active" to={'/category/Marcas'}>
                             Marcas
-                        </Link>
+                        </NavLink>
                     </li>
                 </ul>
             </nav>
             
             <section>
+                <Link to={'/cart'}>
                 <CartWidget/>
+                </Link>
                 <PersonIcon fontSize="large"/>
             </section>
         </header>
