@@ -7,7 +7,6 @@ import { CartContext } from "../../context/CartContext";
 const ItemDetail = ({itemSelected}) => {
 
   const [ count, setCount] = useState(1);
-  const stock = 5
   const navigate = useNavigate();
   const {addItem} = useContext(CartContext)
 
@@ -22,19 +21,24 @@ const ItemDetail = ({itemSelected}) => {
   return (
     <div className='contenedorProductosDetail'>
         <div className="descripcionCard">
-            <img className='imagen_productos' src={itemSelected?.image} alt={itemSelected?.title} width={150} />
-            <h6 className="titulo_producto">{itemSelected?.title}</h6>
+            <img className='imagen_productos' src={itemSelected?.imagen} alt={itemSelected?.nombre} width={150} />
+            <h6 className="titulo_producto">{itemSelected?.nombre}</h6>
         </div>
-        <h3 className='detalle_producto'>{itemSelected?.description}</h3>
+        <h3 className='detalle_producto'>{itemSelected?.descripcion}</h3>
         <div>
-          <p className='precio_detalle'>${itemSelected?.price}</p>
-          <p className="stock">Stock:{stock}</p>
+          <p className='precio_detalle'>${itemSelected?.precio}</p>
+          {itemSelected?.stock === 0 && (
+            <p>Sin stock</p>
+          )}
+          {itemSelected?.stock > 0 && (
+            <h5 className="stock">Stock:{itemSelected?.stock}</h5>
+          )}
         </div>
         <div className="button">
           <button onClick={() => handleNavigation()}>Ir al carrito</button>
           <button onClick={addToCart}>Agregar al carrito</button>
         </div>
-        <ItemCount count={count} setCount={setCount} stock={stock}/>
+        <ItemCount stock={itemSelected?.stock} count={count} setCount={setCount}/>
     </div>    
   )
 }

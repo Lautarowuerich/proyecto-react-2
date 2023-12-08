@@ -9,15 +9,15 @@ const ItemList = ({productList}) => {
         {productList.map((product) => (
             <Link to={'item/' + product.id } key={product.id}>
                 <Item
-                    tittle={product.title}
-                    description={product.description}
-                    price={product.price}
-                    image={product.image}
+                    nombre={product.nombre}
+                    descripcion={product.descripcion}
+                    precio={product.precio}
+                    imagen={product.imagen}
                 />
             </Link>
         ))}
     </div>
   );
-}
+};
 
-export default ItemList
+export default ItemList;

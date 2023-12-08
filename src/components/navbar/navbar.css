@@ -8,17 +8,24 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 80px;
+}
+
+ul {
+    justify-content: center;
+    align-items: center;
 }
 
 .navbar{
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .navbar .menu{
     display: flex;
     align-items: center;
-    height: 70px;
+    justify-content: center;
 }
 
 .menu li{
@@ -28,7 +35,7 @@ header{
 .menu li a{
     text-decoration: none;
     color: black;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 700;
     padding-right: 50px;
 }

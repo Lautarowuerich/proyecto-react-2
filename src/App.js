@@ -5,21 +5,26 @@ import ItemListContainer from "./pages/ItemListContainer/ItemListContainer";
 import ItemDetailContent from "./pages/ItemDetailContainer/ItemDetailConteiner"
 import Cart from "./pages/Cart/Cart"
 import CartProvider from "./context/CartProvider";
+import OrderProvider from "./context/OrderProvider";
+import 'bootstrap/dist/css/bootstrap.min.css'
 
-function App() {
+function App({productList}) {
 
   return (
     <>
       <BrowserRouter>
-          <CartProvider>
-            <Navbar/>
-              <Routes>
-                <Route path="/" element={<ItemListContainer/>}/>
-                <Route path="/category/:id" element={<ItemListContainer/>}/>
-                <Route path="/item/:id" element={<ItemDetailContent/>}/>
-                <Route path="/cart" element={<Cart/>} />
-              </Routes>
-            </CartProvider>
+        <CartProvider>
+          <OrderProvider>
+            <Navbar />
+            <Routes>
+              <Route path="/" element={<ItemListContainer />} />
+              <Route path="/category/:id" element={<ItemListContainer />} />
+              <Route path="/item/:id" element={<ItemDetailContent />} />
+              <Route path="/category/:id/item/:id" element={<ItemDetailContent />} />
+              <Route path="/cart" element={<Cart />} />
+            </Routes>
+          </OrderProvider>
+        </CartProvider>
       </BrowserRouter>
     </>
   );
