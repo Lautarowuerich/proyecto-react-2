@@ -1,12 +1,12 @@
 import '../Item/item.css'
+import Button from 'react-bootstrap/Button';
 
-const Item = ({ nombre, descripcion, precio, imagen, quantity, stock, action, textButton }) => {
+const Item = ({ nombre, precio, imagen, quantity, stock, action, textButton }) => {
   return (
     <div className="card-container">
-      <img src={imagen} alt={nombre} width={70} />
+      <img className='card-image' src={imagen} alt={nombre} width={70} />
       <h3 className="card-tittle">{nombre}</h3>
-      <p className="card-description">{descripcion}</p>
-      <p>${precio}</p>
+      <p className='card-price'>${precio}</p>
       {stock === 0 && (
         <p className="text-red-600 text-right text-xl px-5 font-bold">
           Sin Stock
@@ -16,6 +16,7 @@ const Item = ({ nombre, descripcion, precio, imagen, quantity, stock, action, te
         quantity && <span>Cantidad: {quantity}</span>
       }
       {action && textButton && (<button onClick={() => action()}>{textButton}</button>)}
+      <Button className='card-button' variant="dark">Ir a detalles</Button>
     </div>
   )
 }

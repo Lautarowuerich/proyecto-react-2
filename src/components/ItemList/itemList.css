@@ -1,5 +1,8 @@
-.item-list-container{
+.item-list-container {
     display: grid;
-    grid-template-columns: auto auto auto auto auto;
+    grid-template-columns: repeat(4, 0fr);
+    grid-gap: 35px;
     justify-content: center;
+    margin-right: 100px;
+    
 }

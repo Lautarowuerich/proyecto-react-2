@@ -1,32 +1,45 @@
-.titulo_producto{
-    font-size: 15px;
-    margin-top: 100px;
-    padding: 30px;
+.productsContainer{
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+}
+
+.imagen_productos{
+    width: 800px;
+    object-fit: contain;
 }
 
 .descripcionCard{
-    display: flex;
+    width: 700px;
 }
 
-.contenedorProductosDetail{
-    width: 50%;
-    border: 1px solid #ccc;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    margin: 50px;
+.titulo_producto{
+    font-size: 50px;
 }
 
-.precio_detalle{
-    width: 200px;
-    height: 5px;
-    margin-top: 20px;
-}
-
-.button{
+.detalle_producto{
+    font-size: 14px;
     margin-top: 30px;
 }
 
-.stock{
-    margin-top: 40px;
+.precio_detalle{
+    font-weight: 700;
+    font-size: larger;
+    margin-top: 30px;
+}
+
+.sinStock{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.buttons{
+    margin-top: 30px;
+    width: 320px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.noStock{
+    margin-top: 30px;
 }

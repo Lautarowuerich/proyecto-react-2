@@ -8,7 +8,7 @@ import CartProvider from "./context/CartProvider";
 import OrderProvider from "./context/OrderProvider";
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-function App({productList}) {
+function App() {
 
   return (
     <>
