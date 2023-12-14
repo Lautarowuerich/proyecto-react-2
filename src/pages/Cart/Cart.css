@@ -1,4 +1,37 @@
+.cartContainer{
+    margin-left: 30px;
+}
+
 .form-container {
     width: 15%;
+}
 
+.item-list-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    width: 50%;
+}
+
+.precioTotal{
+    color: green;
+    margin-left: 15px;
+}
+
+.precioFinal{
+    margin-bottom: 70px;
+}
+
+.verDetalle{
+    border:none;
+    background-color: white;
+}
+
+.borrarItem {
+    border:none;
+    background-color: white;
+}
+
+td.cartName.text-center{
+    justify-content: center;
 }

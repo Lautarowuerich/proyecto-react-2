@@ -28,7 +28,7 @@ function navbar(){
             </nav>
             
             <section>
-                    <Link to={'/cart'}><CartWidget/></Link>
+                    <Link className='toCart' to={'/cart'}><CartWidget/></Link>
             </section>
         </header>
     );

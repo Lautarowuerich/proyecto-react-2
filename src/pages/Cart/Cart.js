@@ -1,17 +1,20 @@
 import { useContext, useState } from "react"
 import { CartContext } from "../../context/CartContext"
-import { useNavigate } from "react-router-dom";
-import Item from "../../components/Item/Item"
-import Form from 'react-bootstrap/Form';
+import { Link } from "react-router-dom";
 import { collection, getFirestore, addDoc, updateDoc, doc } from "firebase/firestore";
+import { FaTrashCan } from "react-icons/fa6";
+import Button from 'react-bootstrap/Button';
+import Table from 'react-bootstrap/Table';
+// import Item from "../../components/Item/Item"
+import Form from 'react-bootstrap/Form';
 import '../Cart/Cart.css'
 
 const Cart = () => {
 
   const db = getFirestore();
-  const navigate = useNavigate()
 
   const { products, clearCart, deleteItem } = useContext(CartContext)
+
   const [formValue, setFormValue] = useState({
     name: '',
     phone: '',
@@ -46,9 +49,8 @@ const Cart = () => {
         alert('Orden creada con exito');
         clearCart();
         createOrder();
-        navigate('/checkout');
       })
-      .catch((err) => alert('Error al crear la orden'));
+      .catch((err) => console.log(err));
   };
 
   const updateStock = () => {
@@ -58,34 +60,44 @@ const Cart = () => {
         stock: product.stock - product.quantity,
       });
     });
-
-  }
+  };
 
   const validateForm = formValue.name === '' || formValue.phone === '' || formValue.email === '';
 
   return (
-    <div>
-      <h1>Tu carrito de compras</h1>
-      <button onClick={clearCart}>Vaciar carrito</button>
+    <div className="cartContainer">
+      <h1 className="text-center text-3xl my-10">Resumen de compra</h1>
+ 
       {products.length > 0 ?
         <div className="item-list-container">
-          {products.map((product) => (
-            <div key={product.id}>
-              <Item
-                nombre={product.nombre}
-                descripcion={product.descripcion}
-                precio={product.precio}
-                imagen={product.imagen}
-                quantity={product.quantity}
-                action={() => deleteItem(product.id)}
-                textButton="Eliminar"
-              />
-            </div>
-          ))}
+          <Table className="divide-y divide-gray-200">
+            <tbody className="tbody">
+              {products.map((product) => (
+                <tr className="tabla" key={product.id}>
+                  <td><img src={product.imagen} alt={product.nombre} style={{ height:'6rem'}}/></td>
+                  <td className="cartName text-center">{product.nombre}</td>
+                  <td className="cartPrecio text-center">${product.precio}</td>
+                  <td className="cartQuantity text-center">Cantidad: {product.quantity}</td>
+                  <td className="cartDelete text-center">
+                    <button className="borrarItem ms-2" onClick={() => deleteItem(product.id)}><FaTrashCan /></button>
+                  </td>
+                  <td className="cartDetalle text-center">
+                    <Link to={`/item/${product.id}`}><Button className="verDetalle ms-2" variant="dark">Ver detalle</Button></Link>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+          <h2 className=" precioFinal text-2xl  mt-10 text-left">
+            Precio Final:
+            <strong className="precioTotal">
+              ${(products.reduce((acc, p) => acc + p.precio * p.quantity, 0))}
+            </strong>
+          </h2>
         </div> : <h2>No hay productos en el carrito</h2>
       }
 
-<Form className="form-container">
+      <Form className="form-container">
         <Form.Group className="mb-3">
           <Form.Label>Nombre</Form.Label>
           <Form.Control

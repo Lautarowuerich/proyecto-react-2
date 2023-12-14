@@ -8,8 +8,24 @@ const CartProvider = ({ children }) => {
   const [productQuantity, setProductQuantity] = useState(0);
 
   const deleteItem = (productId) => {
-    setProducts(products.filter((product) => product.id !== productId ))
-  }
+    // setProducts(products.filter((product) => product.id !== productId ))
+    const updatedCart = (products.map((p) => {
+      if (p.id === productId) {
+        const restar = p.quantity - 1;
+
+        if (restar <= 0) {
+          return null;
+        }
+        return {...p, quantity: restar};
+      }
+
+      return p;
+    }))
+    
+    const filtrarCarrito = updatedCart.filter ((p) => p !== null);
+
+    setProducts (filtrarCarrito);
+  };
 
   const addItem = (product, quantity) => {
     if (repeatItem(product.id)) {

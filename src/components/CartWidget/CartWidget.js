@@ -16,12 +16,11 @@ function CartWidget({products}) {
             <button className='butonCart' onClick={() => setVisible(!visible)}>
                 <FaShoppingCart className='iconCart'/>
             </button>
-            {productQuantity > 0 && (
-                <span className='quantityCart' >{productQuantity}</span>
-            )}
-
-
-            {/* {visible && products.length > 0 && <CartDetail/>} */}
+            <div className='quantityCart'>
+                {productQuantity > 0 && (
+                    <span>{productQuantity}</span>
+                )}
+            </div>
         </div>
     );
 }
