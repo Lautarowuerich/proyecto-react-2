@@ -30,17 +30,15 @@ El proyecto CousinVera se desarrolló utilizando las siguientes tecnologías:
 
 ## Demo
 
-<img src="../proyecto-reactjs/public/assets/proyectoFinal.gif" alt="gif">
+![Demo](./public/proyectoFinal.gif)
 
 ## Instalación 🔧
 
 1. **Forkeá y cloná el repositorio​**
 
-2. **Parado en la raíz del proyecto corré el comando**
+2. **Parado en la raíz del proyecto corré el comando "npm install" y así podras instalar todas las dependencias.**
 
-3. **​Para instalar todas las dependecias de la app. Usá​ "npm install"**
-
-4. **Una vez instalado las dependencias, tenés que correr el proyecto con "npm start" y se verá el proyecto en http://localhost:3000**
+3. **Una vez instalado las dependencias, tenés que correr el proyecto con "npm start" y se verá el proyecto en http://localhost:3000**
 
 ## Autor
 
