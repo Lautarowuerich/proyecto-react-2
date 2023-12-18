@@ -30,7 +30,7 @@ El proyecto CousinVera se desarrolló utilizando las siguientes tecnologías:
 
 ## Demo
 
-![Demo](../proyecto-reactjs/public/assets/proyectoFinal.gif)
+<img src="../proyecto-reactjs/public/assets/proyectoFinal.gif" alt="gif">
 
 ## Instalación 🔧
 
