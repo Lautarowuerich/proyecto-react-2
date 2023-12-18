@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# FreeShop: Shopping online
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Somos tu primer shopping online y te invitamos a conocernos!
 
-## Available Scripts
+## Objetivo del Proyecto
 
-In the project directory, you can run:
+El objetivo de FreeShop es implementar lo aprendido en el curso de React ofrecido por CoderHouse
 
-### `npm start`
+## Descripción del Proyecto
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+FreeShop es una tienda de ropa online que permite al usuario tener una variedad de marcas tanto de indumentaria como de zapatillas.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+La aplicaición permite elegir entre los distintos productos, agregarlos al carrito y generar una orden de compra con los datos inherentes a la misma, agregando persistencia con una base de datos firebase y enviando un correo automático al comprador
 
-### `npm test`
+## Tecnologías Utilizadas
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+El proyecto CousinVera se desarrolló utilizando las siguientes tecnologías:
 
-### `npm run build`
+- **React:** Para crear una interfaz de usuario dinámica y receptiva.
+- **CSS:** Para un diseño elegante y moderno.
+- **Bootstrap:** Se utiliza bootstrap para potenciar el diseño y hacerlo responsive.
+- **Firebase/firestore:** Firebase es utilizado en la aplicación para crear una base de datos en firestore, la base de datos contiene los productos de la aplicación y en el storage se almacenan las imagenes utilizadas.
+- **React Icon:** para utilizar iconos como el del carrito.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Características Destacadas
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Indumentaria de marcas de primer nivel:** Explora nuestro catálogo para encontrar tu ropa perfecta tanto de hombre, como para mujer.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Variedad de Zapatillas:** Variedad de zapatillas de marcas como Nike, Jordan, Puma y Adidas en el catálogo para el usuario.
 
-### `npm run eject`
+## Demo
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![Demo](../proyecto-reactjs/public/assets/proyectoFinal.gif)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Instalación 🔧
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. **Forkeá y cloná el repositorio​**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. **Parado en la raíz del proyecto corré el comando**
 
-## Learn More
+3. **​Para instalar todas las dependecias de la app. Usá​ "npm install"**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. **Una vez instalado las dependencias, tenés que correr el proyecto con "npm start" y se verá el proyecto en http://localhost:3000**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Autor
 
-### Code Splitting
+**Lautaro Wuerich**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+**Proyecto de ReactJs de CoderHouse**
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
