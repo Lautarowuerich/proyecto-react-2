@@ -1,6 +1,7 @@
 import { useContext, useState } from "react"
 import { CartContext } from "../../context/CartContext"
-import { Link } from "react-router-dom";
+import { OrderContext } from "../../context/OrderProvider"
+import { Link, useNavigate } from "react-router-dom";
 import { collection, getFirestore, addDoc, updateDoc, doc } from "firebase/firestore";
 import { FaTrashCan } from "react-icons/fa6";
 import Button from 'react-bootstrap/Button';
@@ -13,7 +14,11 @@ const Cart = () => {
 
   const db = getFirestore();
 
-  const { products, clearCart, deleteItem } = useContext(CartContext)
+  const { products, clearCart, deleteItem } = useContext(CartContext);
+
+  const { setOrder } = useContext(OrderContext);
+
+  const navigate = useNavigate();
 
   const [formValue, setFormValue] = useState({
     name: '',
@@ -25,13 +30,13 @@ const Cart = () => {
     setFormValue({ ...formValue, [event.target.name]: event.target.value })
   };
 
-  const createOrder = (event) => {
-    event.preventDefault()
+  const createOrder = () => {
     const querySnapshot = collection(db, 'orders')
     const newOrder = {
       buyer: formValue,
       items: products.map((product) => {
         return {
+          img:product.imagen,
           nombre: product.nombre,
           precio: product.precio,
           id: product.id,
@@ -46,9 +51,10 @@ const Cart = () => {
       .then((res) => {
         newOrder.id = res.id
         updateStock();
-        alert('Orden creada con exito');
+        console.log('Orden creada con exito');
         clearCart();
-        createOrder();
+        setOrder(newOrder);
+        navigate('/checkout')
       })
       .catch((err) => console.log(err));
   };
@@ -94,7 +100,7 @@ const Cart = () => {
               ${(products.reduce((acc, p) => acc + p.precio * p.quantity, 0))}
             </strong>
           </h2>
-        </div> : <h2>No hay productos en el carrito</h2>
+        </div> : <h2 className="sinProductos">No hay productos en el carrito</h2>
       }
 
       <Form className="form-container">
@@ -125,7 +131,8 @@ const Cart = () => {
             value={formValue.email}
             onChange={handleInput} />
         </Form.Group>
-        <button disabled={validateForm} onClick={createOrder}>Confirmar Compra</button>
+        <Button className="finalizarCompra" disabled={validateForm} onClick={createOrder} variant="dark">Finalizar compra</Button>
+
       </Form>
     </div>
 

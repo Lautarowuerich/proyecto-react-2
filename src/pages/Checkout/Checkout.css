@@ -1,0 +1,37 @@
+.checkout{
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+h3{
+    margin-top: 40px;
+}
+
+.datos{
+    color: green;
+}
+
+.table {
+    width: 50%;
+}
+
+.divide-y{
+    width: 100%;
+}
+
+.mb-4{
+    margin-top: 40px;
+    width: 50%;
+}
+
+.contacto{
+    margin-top: 10px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.seguirComprando{
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
